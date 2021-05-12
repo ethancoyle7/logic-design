@@ -1,4 +1,4 @@
---ADDED BY PASSOS - FROM PPT SLIDES - REGISTER
+
 library ieee;
 use ieee.std_logic_1164.all;
 entity reg is   
@@ -21,7 +21,6 @@ begin
 	rout <= rt;
 end r;
 
--- MUXES ADDED BY DR PASSOS
 -- MUXLDMV SELECTS DATA TO GO TO REGISTERS 0 AND 1 FROM lOAD OR MOVE
 
 library ieee;
@@ -65,7 +64,7 @@ begin
 	end process;
 end sel4;
 
--- NOT OPERATION WAS MISSING
+-- NOT OPERATION 
 library ieee;
 use ieee.std_logic_1164.all;
 entity nega is   
@@ -103,46 +102,6 @@ begin
 	end case;
 	end process;
 end d;
-
---ORIGINAL REGISTER DISCARDED, SHOULD BE A SINGLE REGISTER
---register entity 4 bit 
---- loads values into r1 and r0
---library ieee;
---use ieee.std_logic_1164.all;
---entity reg is 
---port(
---    -- load goes to r0,r1
---    load: in std_logic;
---	 --- clock
---    ck :in std_logic;
---	 --- to enable entitys to work
---    enable:in std_logic;
---    --inputs to the register 0 and 1
---    inp1:in std_logic_vector(3 downto 0);
---	 inp2: in std_logic_vector(3 downto 0);
---	 --- load values to reg 0
---    r1out:out std_logic_vector(3 downto 0);
---	 ----load values into reg1
---	 r0out:out std_logic_vector(3 downto 0));
---end entity;
---
---architecture reg4bit of reg is
---begin
---    process(ck,enable)
---    begin
---        if enable = '1' then
---            r1out<= "0000";
---				r0out <= "0000";
---        elsif ck 'event and ck = '0' then
---            if load = '1' then
---				------ input values will be differnt values enter to regster 1 and 0;
---                r1out <= inp1;
---					 r0out <= inp2;
---            end if;
---        end if;
---    end process;
---end reg4bit;
----- end of regster 
 
 
 -- ORIGINAL SUBMITTED CODE
@@ -299,7 +258,7 @@ rin:in std_logic_vector(3 downto 0);
 rout:out std_logic_vector(3 downto 0));
 end component;
 
---COMPONENTS ADDED BY PASSOS
+-
 --MUXES
 component muxLDMV is   
 port ( selct:	 in std_logic;
@@ -327,12 +286,12 @@ port ( selct:	 in std_logic_vector (3 downto 0);
 		 rout:	 out std_logic_vector (3 downto 0));
 end component;
 
---SIGNALS DISCARDED - CLOCK IS DECLARED AS EXE IN THE PROJECT ENTITY
+--CLOCK IS DECLARED AS EXE IN THE PROJECT ENTITY
 --enable the loader
 --signal ck:STD_LOGIC;
 --signal enLD: STD_LOGIC;
 
---- VECTORS WERE CORRECTED TO INCLUDE THEIR SIZES
+--- VECTORS INCLUDE THEIR SIZES
 --sginal for all the other components--
 signal Subout:STD_LOGIC_VECTOR(3 downto 0);
 signal Adout:STD_LOGIC_VECTOR(3 downto 0);
