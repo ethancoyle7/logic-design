@@ -322,7 +322,7 @@ enLDR1<= (not instruction(6))and(not instruction(5)) and instruction(4);
 --IDENTIFIES THE INSTRUCTIONS THAT RESULT IN R2, NOT LOAD AND NOT MOVE AND NOT DISPKLAY
 enLDR2<= (not enLDR0)and (not enLDR1)and (not (instruction(7) and (not instruction(5))));
 
--- ADDED BTY PASSOS MUX SELECTING MOVE OR LOAD (instr 7 does that)
+
 whichdata: muxLDMV port map (instruction (7),instruction(3 downto 0), R2, muxout);
 
 register_0:reg 	port map (exe,enLDR0,Muxout,R0);
